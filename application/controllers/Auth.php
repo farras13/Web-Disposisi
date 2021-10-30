@@ -38,7 +38,7 @@ class Auth extends CI_Controller {
 			);
 			$this->session->set_userdata('log',$log);
             
-			$this->session->set_flashdata('toast', 'success:Welcome back '.$cek->nama_pengurus);
+			$this->session->set_flashdata('toast', 'success:Welcome back '.$cek->username);
 
 			redirect('Home', 'refresh');
 		}else{

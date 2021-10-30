@@ -14,79 +14,92 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background: #2067a1;
+		}
+		.row{
+			background: white;
+			border-radius: 30px;
+			box-shadow: 12px 12px 21px #1a3f79;
+		}
+		img{
+			margin-top: 150px;
+			border-top-left-radius: 30px;
+			border-bottom-left-radius: 30px;
+		}
+		.btn1{
+			border: none;
+			outline: none;
+			height: 50px;
+			width: 100%;
+			background-color: black;
+			color: white;
+			border-radius: 4px;
+			font-weight: bold;
+		}
+		.btn1:hover{
+			background: white;
+			border: 1px solid;
+			color: black;
+		}		
+	</style>
 </head>
 
 <body>
-	<div class="d-flex" id="wrapper">
-		<!-- Page content wrapper-->
-		<div id="page-content-wrapper">
-			<!-- Top navigation-->
-			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-				<div class="container-fluid">
-					<!-- <button class="btn btn-primary" id="sidebarToggle"><i class="fa fa-bars"></i></button> -->
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-							<li class="nav-item"><a class="nav-link" href="<?= base_url('Barang') ?>">Barang</a></li>
-							<li class="nav-item active"><a class="nav-link" href="<?= base_url('Penjualan') ?>">Penjualan</a></li>
-							<li class="nav-item"><a class="nav-link" href="<?= base_url('Prediksi') ?>">Prediksi</a></li>
-						</ul>
-					</div>
+	<section class="Form my-4 mx-5">
+		<div class="container">
+			<div class="row g-0">
+				<div class="col-lg-6">
+					<img src="<?= base_url('assets/test.jpg') ?>" height="auto" width="100%" class="img-fluid" alt="">
 				</div>
-			</nav>
-
-			<!-- Page content-->
-			<div style="margin: 5% 8%;">
-				<div class="container">
-					<div>
-						<div class="row my-3">
-							<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-2">
-
-							</div>
-							<div class="col-12 col-md-6 mb-4 mt-4 mb-lg-0 col-lg-8">
-								<div class="card">
-									<div class="card-header">
-										<h4>Register Akun</h4>
-									</div>
-									<div class="card-body">
-
-										<form action="<?= base_url('Auth/pros_reg') ?>" method="post">
-											<div class="form-group">
-												<label for="username">Username</label>
-												<input type="text" class="form-control" name="username" id="username">
-											</div>
-											<div class="form-group">
-												<label for="password">Password</label>
-												<input type="password" class="form-control" name="password" id="password">
-											</div>
-											<div class="form-group">
-												<label for="email">Email</label>
-												<input type="email" class="form-control" name="email" id="email">
-											</div>
-											<div class="form-group mb-2">
-												<label for="role">Role</label>
-												<select name="role" id="role" class="form-control">
-													<option value="0">User</option>
-													<option value="1">Admin</option>
-												</select>
-											</div>
-											<div class="form-group mt-4">
-												<button type="submit" class="btn btn-primary mt-3 mb-2" style="margin-left: 25%; margin-right: 25%;  width: 350px;">Login</button>
-												<center><small style="margin-left: 25%; margin-right: 25%;"> Sudah punya akun? <a href="<?= base_url('Auth') ?>">Login disini</a> </small></center>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-2">
-
+				<div class="kolom col-lg-6 px-5 py-5">
+					<h1 class="font-weight-bold pt-5">Create Account</h1>
+					<small>Register your account to join Asabri  </small>
+					<form action="<?= base_url('Auth/pros_reg') ?>" method="POST">
+						<div class="form-row">
+							<div class="form-floating col-lg-8">
+								<input type="text" name="username" id="username" placeholder="Username" class="form-control my-3">
+								<label for="username">Username</label>
 							</div>
 						</div>
-					</div>
+						<div class="form-row">
+							<div class="col-lg-8 form-floating">
+								<input type="email" name="email" id="email" placeholder="Email Address" class="form-control my-3">
+								<label for="email">Email</label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-8 form-floating">
+								<input type="password" name="password" id="password" placeholder="Password" class="form-control my-3">
+								<label for="password">Password</label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-8 form-floating">
+								<select name="role" id="role" class="form-select my-3">
+									<option value="0">admin</option>
+									<option value="1">user</option>
+								</select>
+								<label for="role">Role</label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-8">
+								<button type="submit" class="btn1 mt-4 mb-3"> Register </button>
+							</div>
+						</div>
+						<p>Have an account? <a href="<?= base_url('Auth') ?>">Login here</a> </p>
+					</form>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Bootstrap core JS-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->

@@ -1,44 +1,40 @@
 <section class="mi my-4 mx-5">
 	<div class="container">
-		<h1>Table Template</h1>
-		<h6>Informasi mengenai data yang anda tampilkan</h6>
+		<h1>Surat Masuk</h1>
+		<h6>Informasi mengenai pencatatan data surat masuk</h6>
 		<hr>
-		<table class="table table-hover table-responsive-md">
+		<table class="table table-hover table-responsive-md" id="myTable">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
-					<th scope="col">Handle</th>
+					<th scope="col">No Agenda</th>
+					<th scope="col">Tanggal Surat</th>
+					<th scope="col">Pengirim</th>
+					<th scope="col">Jenis Klaim</th>
+					<th scope="col">Catatan</th>
 					<th scope="col">action</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody>				
 				<tr>
 					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
+					<td>Larry the Bird</td>
+					<td>12 Mei 2000</td>
+					<td>@instagram</td>
+					<td>@twitter</td>
+					<td>@twitter</td>
 					<td>
-						<button class="btn btn-primary"> asd </button>
+						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> asd </button>
 						<button class="btn btn-warning"> asd </button>
 						<button class="btn btn-danger"> asd </button>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-					<td>
-						<button class="btn btn-primary"> asd </button>
-						<button class="btn btn-warning"> asd </button>
-						<button class="btn btn-danger"> asd </button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td colspan="2">Larry the Bird</td>
+					<td>Larry the Bird</td>
+					<td>21 Des 1999</td>
+					<td>@tiktok</td>
+					<td>@twitter</td>
 					<td>@twitter</td>
 					<td>
 						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> asd </button>

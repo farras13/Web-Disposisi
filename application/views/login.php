@@ -9,75 +9,84 @@
 	<title>Disposisi Surat</title>
 	<!-- Favicon-->
 	<link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/favicon.ico" />
-	<!-- Core theme CSS (includes Bootstrap)-->
-	<link href="<?= base_url() ?>assets/css/styles.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background: #2067a1;
+		}
+		.row{
+			background: white;
+			border-radius: 30px;
+			box-shadow: 12px 12px 21px #1a3f79;
+		}
+		img{
+			margin-top: 150px;
+			border-top-left-radius: 30px;
+			border-bottom-left-radius: 30px;
+		}
+		.btn1{
+			border: none;
+			outline: none;
+			height: 50px;
+			width: 100%;
+			background-color: black;
+			color: white;
+			border-radius: 4px;
+			font-weight: bold;
+		}
+		.btn1:hover{
+			background: white;
+			border: 1px solid;
+			color: black;
+		}		
+	</style>
 </head>
 
 <body>
-	<div class="d-flex" id="wrapper">
-		<!-- Page content wrapper-->
-		<div id="page-content-wrapper">
-			<!-- Top navigation-->
-			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-				<div class="container-fluid">
-					<!-- <button class="btn btn-primary" id="sidebarToggle"><i class="fa fa-bars"></i></button> -->
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-							<li class="nav-item"><a class="nav-link" href="<?= base_url('Barang') ?>">Barang</a></li>
-							<li class="nav-item active"><a class="nav-link" href="<?= base_url('Penjualan') ?>">Penjualan</a></li>
-							<li class="nav-item"><a class="nav-link" href="<?= base_url('Prediksi') ?>">Prediksi</a></li>
-						</ul>
-					</div>
+	<section class="Form my-4 mx-5">
+		<div class="container">
+			<div class="row g-0">
+				<div class="col-lg-6">
+					<img src="<?= base_url('assets/test.jpg') ?>" height="auto" width="100%" class="img-fluid" alt="">
 				</div>
-			</nav>
-
-			<!-- Page content-->
-			<div style="margin: 5% 8%;">
-				<div class="container">
-					<div>
-						<div class="row my-3">
-							<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-2">
-
-							</div>
-							<div class="col-12 col-md-6 mb-4 mt-4 mb-lg-0 col-lg-8">
-								<div class="card">
-									<div class="card-header">
-										<h4>Login</h4>
-									</div>
-									<div class="card-body">
-
-										<form action="<?= base_url('Auth/pros_log') ?>" method="post">
-											<div class="form-group">
-												<label for="username">Username</label>
-												<input type="text" class="form-control" name="username" id="username">
-											</div>
-											<div class="form-group">
-												<label for="username">Password</label>
-												<input type="passwrod" class="form-control" name="password" id="password">
-											</div>
-											<div class="form-group">
-												<button type="submit" class="btn btn-primary mt-3 mb-2" style="margin-left: 25%; margin-right: 25%;  width: 350px;">Login</button>
-												<center><small style="margin-left: 25%; margin-right: 25%;"> Belum punya akun? <a href="<?= base_url('Auth/register') ?>">Register disini</a> </small></center>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-2">
-
+				<div class="kolom col-lg-6 px-5 py-5">
+					<h1 class="font-weight-bold pt-5">Welcome Back</h1>
+					<small>Sign into your account </samll>
+					<form action="<?= base_url('Auth/pros_log') ?>" method="POST">
+						<div class="form-row">
+							<div class="col-lg-8 form-floating">
+								<input type="text" name="username" id="username" placeholder="Username" class="form-control my-3">
+								<label for="username">Username</label>
 							</div>
 						</div>
-					</div>
+						<div class="form-row">
+							<div class="col-lg-8 form-floating">
+								<input type="password" name="password" id="password" placeholder="Password" class="form-control my-3">
+								<label for="password">Password</label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-8">
+								<button type="submit" class="btn1 mt-4 mb-5"> Login </button>
+							</div>
+						</div>
+						<p>Don't have an account? <a href="<?= base_url('Auth/register') ?>">Register here</a> </p>
+					</form>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Bootstrap core JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+	</section>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<!-- Core theme JS-->
 	<script src="<?= base_url() ?>assets/js/scripts.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
