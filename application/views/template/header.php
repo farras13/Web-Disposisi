@@ -11,8 +11,12 @@
 	<link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/favicon.ico" />
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+	<!-- datatable -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+	<!-- toast -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+	<!-- icon font -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<style>
@@ -46,13 +50,13 @@
 			<div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a class="nav-link active" aria-current="page" href="<?= base_url('home') ?>">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?= base_url('home/masuk') ?>">Surat Masuk</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Surat Keluar</a>
+						<a class="nav-link" href="<?= base_url('home/keluar') ?>">Surat Keluar</a>
 					</li>
 					<!-- <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
