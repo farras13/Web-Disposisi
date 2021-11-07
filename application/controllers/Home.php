@@ -20,6 +20,7 @@ class Home extends CI_Controller {
 	public function masuk()
 	{
 		$data['masuk'] = $this->m->getData('surat_masuk')->result();
+		$data['total'] = $this->m->lastId('surat_masuk')->row();
 		$this->load->view('template/header');
 		$this->load->view('masuk/index', $data);
 		$this->load->view('template/footer');
@@ -147,7 +148,33 @@ class Home extends CI_Controller {
 
 	public function keluar()
 	{
-		$data['keluar'] = $this->m->getData('surat_keluar')->result();
+		$claim = $this->uri->segment(3);
+		
+		if ($claim == null) {
+			$w = array('claim' => 1);
+			$data['judul'] = "Nota dinas"; 
+		} elseif($claim == 2) {
+			$w = array('claim' => 2);
+			$data['judul'] = "Surat Perintah";
+		} elseif($claim == 3) {
+			$w = array('claim' => 3);
+			$data['judul'] = "Surat Perintah perjalanan dinas";
+		} elseif($claim == 4) {
+			$w = array('claim' => 4);
+			$data['judul'] = "Berita acara";
+		} elseif($claim == 5) {
+			$w = array('claim' => 5);
+			$data['judul'] = "SPKS ";
+		} elseif($claim == 6) {
+			$w = array('claim' => 6);
+			$data['judul'] = "Surat Keluar Yanggan";
+		}else {
+			$w = array('claim' => 7);
+			$data['judul'] = "Surat keluar Adum";
+		}
+		
+		$data['keluar'] = $this->m->getData('surat_keluar', $w)->result();
+		$data['total'] = $this->m->lastId('surat_keluar', $w)->row();
 		$this->load->view('template/header');
 		$this->load->view('keluar/index', $data);
 		$this->load->view('template/footer');
@@ -205,6 +232,8 @@ class Home extends CI_Controller {
 	public function uploadSK($dokumen, $jenis){
 		if ($dokumen != null && $jenis == 'tambah') {
 			$data = array(
+				'id_claim' => $this->input->post('norut'), 
+				'claim' => $this->input->post('claim'), 
 				'kode_surat' => $this->input->post('kode'), 
 				'no_surat' => $this->input->post('no'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
@@ -218,6 +247,8 @@ class Home extends CI_Controller {
 			$this->m->ins('surat_keluar', $data);
 		} elseif($dokumen == null && $jenis == 'tambah') {
 			$data = array(
+				'id_claim' => $this->input->post('norut'), 
+				'claim' => $this->input->post('claim'), 
 				'kode_surat' => $this->input->post('kode'), 
 				'no_surat' => $this->input->post('no'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
@@ -230,6 +261,8 @@ class Home extends CI_Controller {
 			$this->m->ins('surat_keluar',$data);
 		}elseif($dokumen != null && $jenis == 'update') {
 			$data = array(
+				'id_claim' => $this->input->post('norut'), 
+				'claim' => $this->input->post('claim'), 
 				'kode_surat' => $this->input->post('kode'), 
 				'no_surat' => $this->input->post('no'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
@@ -240,10 +273,12 @@ class Home extends CI_Controller {
 				'catatan' => $this->input->post('catatan'), 
 				'dokumen' => $dokumen, 
 			);     
-			$w = array('id' => $this->uri->segment(3), );     
+			$w = array('id' => $this->uri->segment(4), );     
 			$this->m->upd('surat_keluar',$data, $w);
 		}else{
 			$data = array(
+				'id_claim' => $this->input->post('norut'), 
+				'claim' => $this->input->post('claim'), 
 				'kode_surat' => $this->input->post('kode'), 
 				'no_surat' => $this->input->post('no'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
@@ -253,7 +288,7 @@ class Home extends CI_Controller {
 				'perihal' => $this->input->post('perihal'),
 				'catatan' => $this->input->post('catatan')
 			);     
-			$w = array('id' => $this->uri->segment(3), );     
+			$w = array('id' => $this->uri->segment(4), );     
 			$this->m->upd('surat_keluar',$data, $w);
 		}       
 	}

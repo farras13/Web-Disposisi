@@ -36,4 +36,4 @@
 		</table>
 	</div>
 </section>
-<?php $data['masuk']=$masuk;  $this->load->view('masuk/modal', $data); ?>
+<?php $data['masuk']=$masuk; $data['total'] = $total;  $this->load->view('masuk/modal', $data); ?>

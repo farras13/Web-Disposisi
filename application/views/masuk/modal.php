@@ -11,74 +11,74 @@
 					<div class="row g-2">
 						<div class="col-md-12">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="no" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="norut" id="floatingInputGrid" value="<?= $total->id + 1 ?>" disabled>
+								<label for="floatingInputGrid">No Urut</label>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-floating">
+								<input type="text" class="form-control" name="no" id="floatingInputGrid">
 								<label for="floatingInputGrid">No Agenda</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="date" class="form-control" name="tgl_surat" id="floatingInputGrid" >
+								<input type="date" class="form-control" name="tgl_surat" id="floatingInputGrid">
 								<label for="floatingInputGrid">tgl surat</label>
 							</div>
 						</div>
-						<!-- <div class="col-md-4">
-							<div class="form-floating">
-								<input type="date" class="form-control" name="" id="floatingInputGrid"  >
-								<label for="floatingInputGrid">tgl entry</label>
-							</div>
-						</div> -->
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="pengirim" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="pengirim" id="floatingInputGrid">
 								<label for="floatingInputGrid">Pengirim</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="peserta" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="peserta" id="floatingInputGrid">
 								<label for="floatingInputGrid">Nama Peserta</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="pemohon" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="pemohon" id="floatingInputGrid">
 								<label for="floatingInputGrid">Nama Pemohon</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="nrp" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="nrp" id="floatingInputGrid">
 								<label for="floatingInputGrid">NRP</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="ktpa" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="ktpa" id="floatingInputGrid">
 								<label for="floatingInputGrid">no ktpa</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="alamat" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="alamat" id="floatingInputGrid">
 								<label for="floatingInputGrid">Alamat</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-floating">
-								<input type="text" class="form-control" name="telpon" id="floatingInputGrid" >
+								<input type="text" class="form-control" name="telpon" id="floatingInputGrid">
 								<label for="floatingInputGrid">no telpon</label>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-floating">
-								<select class="form-select" name="claim" id="floatingSelectGrid" aria-label="Floating label select example" >
-									<option selected>Pilih salah satu</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
+								<select class="form-select" name="claim" id="floatingSelectGrid" aria-label="Floating label select example">
+									<option value="1">Nota dinas</option>
+									<option value="2">Surat Perintah</option>
+									<option value="3">Surat Perintah perjalanan dinas</option>
+									<option value="4">Berita acara</option>
+									<option value="5">SPKS </option>
+									<option value="6">Surat Keluar Yanggan</option>
+									<option value="7">Surat keluar Adum</option>
 								</select>
 								<label for="floatingSelectGrid">Jenis Claim</label>
 							</div>
@@ -119,6 +119,12 @@
 				<div class="modal-body">
 					<form action="<?= base_url('Home/upd_masuk/') . $ms->id ?>" method="POST" class="form" enctype="multipart/form-data">
 						<div class="row g-2">
+							<div class="col-md-12">
+								<div class="form-floating">
+									<input type="text" class="form-control" name="norut" id="floatingInputGrid" value="<?= $ms->id ?>" disabled>
+									<label for="floatingInputGrid">No Urut</label>
+								</div>
+							</div>
 							<div class="col-md-12">
 								<div class="form-floating">
 									<input type="text" class="form-control" name="no" id="floatingInputGrid" value="<?= $ms->no_agenda ?>">
@@ -323,9 +329,10 @@
 						</div>
 						<div class="col-md-12">
 							<h3>Preview Dokumen</h3>
-							<?php if($ms->dokumen != null): ?>
-							<iframe src="<?= base_url('assets/upload/') . $ms->dokumen ?>" width="100%" height="500"></iframe>
-							<?php else: echo"<h5> Dokumen tidak ada </h5>"; endif; ?>
+							<?php if ($ms->dokumen != null) : ?>
+								<iframe src="<?= base_url('assets/upload/') . $ms->dokumen ?>" width="100%" height="500"></iframe>
+							<?php else : echo "<h5> Dokumen tidak ada </h5>";
+							endif; ?>
 						</div>
 
 					</div>

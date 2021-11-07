@@ -12,6 +12,17 @@ class M_basic extends CI_Model {
 		return $this->db->get($t);
 	}
 
+	public function lastId($t, $w = null)
+	{
+		if ($w != null) {
+			$this->db->where($w);
+			$this->db->order_by('id_claim', 'desc');		
+		}else{
+			$this->db->order_by('id', 'desc');
+		}	
+		return $this->db->get($t, 1);		
+	}
+
 	public function ins($t, $data)
 	{
 		$this->db->insert($t, $data);
