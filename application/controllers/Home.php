@@ -12,8 +12,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$data['masuk'] = $this->hitung('surat_masuk');
+		$data['keluar'] = $this->hitung('surat_keluar');
+		$data['claim'] = ['Nota dinas', 'Surat Perintah', 'Surat Perintah perjalanan dinas', 'Berita acara', 'SPKS', 'Surat Keluar Yanggan', 'Surat keluar Adum'] ;
 		$this->load->view('template/header');
-		$this->load->view('index');
+		$this->load->view('index', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -72,6 +75,58 @@ class Home extends CI_Controller {
 		$w = array('id' => $id, );
 		$this->m->del('surat_masuk', $w);
 		redirect('Home/masuk','refresh');
+	}
+
+	public function printM($id)
+	{
+		$w = array('id' => $id);
+		$data['pm'] = $this->m->getData('surat_masuk', $w)->row();
+		$this->load->view('masuk/print', $data);
+	}
+
+	function hitung($t){
+		$keluar = $this->m->getData($t)->result();
+		$a=0; $b=0; $c=0; $d=0; $e=0; $f=0; $g=0;
+		if ($t == "surat_keluar") {
+			foreach ($keluar as $k ) {
+				if ($k->claim == 1) {
+					$a += 1;
+				} elseif($k->claim == 2) {
+					$b += 1;
+				} elseif($k->claim == 3) {
+					$c += 1;
+				} elseif($k->claim == 4) {
+					$d += 1;
+				} elseif($k->claim == 5) {
+					$e += 1;
+				} elseif($k->claim == 6) {
+					$f += 1;
+				} elseif($k->claim == 7) {
+					$g += 1;
+				}
+			}
+		} else {
+			foreach ($keluar as $k ) {
+				if ($k->jenis_klaim == 1) {
+					$a += 1;
+				} elseif($k->jenis_klaim == 2) {
+					$b += 1;
+				} elseif($k->jenis_klaim == 3) {
+					$c += 1;
+				} elseif($k->jenis_klaim == 4) {
+					$d += 1;
+				} elseif($k->jenis_klaim == 5) {
+					$e += 1;
+				} elseif($k->jenis_klaim == 6) {
+					$f += 1;
+				} elseif($k->jenis_klaim == 7) {
+					$g += 1;
+				}
+			}
+		}	
+		
+		$data = [$a, $b, $c, $d, $e, $f, $g];
+		return $data;
 	}
 
 	public function uploadSM($dokumen, $jenis){
@@ -178,6 +233,13 @@ class Home extends CI_Controller {
 		$this->load->view('template/header');
 		$this->load->view('keluar/index', $data);
 		$this->load->view('template/footer');
+	}
+
+	public function printK($id)
+	{
+		$w = array('id' => $id);
+		$data['pm'] = $this->m->getData('surat_keluar', $w)->row();
+		$this->load->view('keluar/print', $data);
 	}
 
 	public function ins_keluar()

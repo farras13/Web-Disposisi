@@ -190,17 +190,19 @@
 									<select class="form-select" name="claim" id="floatingSelectGrid" aria-label="Floating label select example">
 										<option selected>Pilih salah satu</option>
 										<option value="1" <?php if ($ms->jenis_klaim == 1) : echo "selected";
-															endif ?>>One</option>
+															endif ?>>Nota dinas</option>
 										<option value="2" <?php if ($ms->jenis_klaim == 2) : echo "selected";
-															endif ?>>Two</option>
+															endif ?>>Surat Perintah</option>
 										<option value="3" <?php if ($ms->jenis_klaim == 3) : echo "selected";
-															endif ?>>Three</option>
+															endif ?>>Surat Perintah perjalanan dinas</option>
 										<option value="4" <?php if ($ms->jenis_klaim == 4) : echo "selected";
-															endif ?>>One</option>
+															endif ?>>Berita acara</option>
 										<option value="5" <?php if ($ms->jenis_klaim == 5) : echo "selected";
-															endif ?>>Two</option>
+															endif ?>>SPKS</option>
 										<option value="6" <?php if ($ms->jenis_klaim == 6) : echo "selected";
-															endif ?>>Three</option>
+															endif ?>>Surat keluar Yanggan</option>
+										<option value="7" <?php if ($ms->jenis_klaim == 7) : echo "selected";
+															endif ?>>Surat keluar Adum</option>
 									</select>
 									<label for="floatingSelectGrid">Jenis Claim</label>
 								</div>
@@ -339,6 +341,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<a href="<?= base_url('home/printM/'). $ms->id ?>" class="btn btn-warning">Print</a>
 				</div>
 			</div>
 		</div>

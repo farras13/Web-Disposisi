@@ -39,6 +39,14 @@ class M_basic extends CI_Model {
 		$this->db->delete($t);
 	}
 
+	public function hitungK()
+	{
+		$this->db->group_by('claim');
+		
+		
+		
+	}
+
 }
 
 /* End of file M_basic.php */

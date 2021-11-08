@@ -32,8 +32,8 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Kode Surat</th>
-					<th scope="col">No Surat</th>
+					<th scope="col">No Agenda</th>
+					
 					<th scope="col">Tanggal Surat</th>
 					<th scope="col">Tujuan</th>
 					<th scope="col">Perihal</th>
@@ -46,8 +46,8 @@
 				foreach ($keluar as $k) : ?>
 					<tr>
 						<th scope="row"><?= $n++ ?></th>
-						<td><?= $k->kode_surat ?></td>
-						<td><?= $k->no_surat ?></td>
+						<td><?= $k->kode_surat.' / '. $k->no_surat ?></td>
+						
 						<td><?= $k->tgl_surat ?></td>
 						<td><?= $k->tujuan ?></td>
 						<td><?= $k->perihal ?></td>

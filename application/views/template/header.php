@@ -36,6 +36,9 @@
 			padding-top: 20px;
 			padding-bottom: 20px;
 		}
+		.card-title{
+			text-align: center;
+		}
 
 	</style>
 </head>
