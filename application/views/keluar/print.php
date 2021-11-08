@@ -21,6 +21,7 @@
 			margin-right: auto;
 			font-size: 10pt;
 		}
+
 		.mi {
 			background: white;
 			border-radius: 30px;
@@ -55,13 +56,13 @@
 						<label for="inp2" class="col-form-label">No Surat</label>
 					</div>
 					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inp2" value="<?= $pm-> no_surat?>" readonly>
+						<input type="text" class="form-control" id="inp2" value="<?= $pm->no_surat ?>" readonly>
 					</div>
-				</div>				
+				</div>
 				<div class="row mb-3">
 					<label for="inp3" class="col-sm-2 col-form-label">Nomor Agenda</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp3" value="<?= $pm->kode_surat.' / '.$pm->no_surat ?>" readonly>
+						<input type="text" class="form-control" id="inp3" value="<?= $pm->kode_surat . ' / ' . $pm->no_surat ?>" readonly>
 					</div>
 				</div>
 				<div class="row mb-3">
@@ -82,17 +83,31 @@
 						<input type="text" class="form-control" id="inp6" value="<?= $pm->perihal ?>" readonly>
 					</div>
 				</div>
-				<div class="row mb-3">
+				<div class="row mb-4">
 					<label for="inp8" class="col-sm-2 col-form-label">Catatan</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="inp8" value="<?= $pm->catatan ?>" readonly>
 					</div>
 				</div>
+				<div class="row row-cols-2 row-cols-lg-2 mt-5" style="text-align: center;">
+					<div class="col-3">
+						<p><b>Sleman, Yogyakarta</b></p><br>
+						<h6><?= $user['username']; ?></h6>
+					</div>
+					<div class="col-2" style="vertical-align: text-bottom;">
+						<p><b><?= date('d-M-y'); ?></b></p>
+					</div>
+				</div>				
 			</div>
 		</div>
 	</div>
 
 
+	<script>
+		window.onload = function() {
+			window.print();
+		}
+	</script>
 </body>
 
 </html>

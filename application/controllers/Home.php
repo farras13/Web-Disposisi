@@ -7,6 +7,9 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if ($this->session->userdata('log') == null) {
+			redirect('Auth');
+		}
 		$this->load->model('M_basic', 'm');
 	}	
 
@@ -81,6 +84,7 @@ class Home extends CI_Controller {
 	{
 		$w = array('id' => $id);
 		$data['pm'] = $this->m->getData('surat_masuk', $w)->row();
+		$data['user'] = $this->session->userdata('log');		
 		$this->load->view('masuk/print', $data);
 	}
 
@@ -239,6 +243,7 @@ class Home extends CI_Controller {
 	{
 		$w = array('id' => $id);
 		$data['pm'] = $this->m->getData('surat_keluar', $w)->row();
+		$data['user'] = $this->session->userdata('log');		
 		$this->load->view('keluar/print', $data);
 	}
 

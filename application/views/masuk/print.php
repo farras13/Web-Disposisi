@@ -95,9 +95,19 @@
 						<input type="text" class="form-control" id="inp8" value="<?= $pm->catatan ?>" readonly>
 					</div>
 				</div>
+				<div class="row row-cols-2 row-cols-lg-2 mt-5" style="text-align: center;">
+					<div class="col-3">
+						<p><b>Sleman, Yogyakarta</b></p><br>
+						<h6><?= $user['username']; ?></h6>
+					</div>
+					<div class="col-2" style="vertical-align: text-bottom;">
+						<p><b><?= date('d-M-y'); ?></b></p>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>
+	
 
 	<script>
 		window.onload = function() { window.print(); }
