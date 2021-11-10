@@ -9,6 +9,7 @@
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">No Agenda</th>
+					<th scope="col">No Surat</th>
 					<th scope="col">Tanggal Surat</th>
 					<th scope="col">Pengirim</th>
 					<th scope="col">Jenis Klaim</th>
@@ -21,6 +22,7 @@
 				<tr>
 					<th scope="row"><?= $n++ ?></th>
 					<td><?= $m->no_agenda ?></td>
+					<td><?= $m->no_surat ?></td>
 					<td><?= $m->tgl_surat ?></td>
 					<td><?= $m->pengirim ?></td>
 					<td><?= $m->jenis_klaim ?></td>

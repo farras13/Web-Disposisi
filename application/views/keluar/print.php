@@ -32,13 +32,14 @@
 </head>
 
 <body>
-	<div class="card">
+	<div class="card" style="border: 0;">
 		<h5 class="card-header">
 			<img src="<?= base_url('assets/logo.png') ?>" alt="" width="70" height="70" class="d-inline-block align-text-top">
 		</h5>
 		<div class="card-body">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-4"></div>
+				<div class="col-md-8">
 					<p class="float-end" style="font-size: small;">Phone : (0274)869454, Call Center 0823 1403 4559 <br> E_mail kancab, yogyakarta@asabri.co.id </p>
 				</div>
 
@@ -47,59 +48,47 @@
 							<h4 class="card-title">Special title treatment</h4>
 						</b></center>
 				</div>
-				<div class="row mb-3">
-					<label for="inp1" class="col-sm-2 col-form-label">Kode Surat</label>
-					<div class="col-sm-4">
-						<input type="email" class="form-control" id="inp1" value="<?= $pm->kode_surat ?>" readonly>
-					</div>
-					<div class="col-sm-2">
-						<label for="inp2" class="col-form-label">No Surat</label>
-					</div>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inp2" value="<?= $pm->no_surat ?>" readonly>
-					</div>
+			</div>
+			<table class="table table-sm table-borderless" >
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Kode Surat&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->kode_surat ?></label></td>
+					<td><label for="inp2" class="col-form-label"><b>No Surat&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_surat ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>No Agenda&nbsp;:</b></label></td>
+					<td ><label class="col-form-label"> <?= $pm->kode_surat . ' / ' . $pm->no_surat ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Tujuan&nbsp;:</b></label></td>
+					<td ><label class="col-form-label"> <?= $pm->tujuan ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Alamat&nbsp;:</b></label></td>
+					<td ><label class="col-form-label"> <?= $pm->alamat ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Perihal&nbsp;:</b></label></td>
+					<td ><label class="col-form-label"> <?= $pm->perihal ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Catatan&nbsp;:</b></label></td>
+					<td ><label class="col-form-label"> <?= $pm->catatan ?></label></td>
+				</tr>
+			</table>
+			
+			<div class="row row-cols-2 row-cols-lg-2 mt-5" style="text-align: center;">
+				<div class="col-3">
+					<p><b>Sleman, Yogyakarta</b></p><br>
+					<h6><?= $user['username']; ?></h6>
 				</div>
-				<div class="row mb-3">
-					<label for="inp3" class="col-sm-2 col-form-label">Nomor Agenda</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp3" value="<?= $pm->kode_surat . ' / ' . $pm->no_surat ?>" readonly>
-					</div>
+				<div class="col-2" style="vertical-align: text-bottom;">
+					<p><b><?= date('d-M-y'); ?></b></p>
 				</div>
-				<div class="row mb-3">
-					<label for="inp4" class="col-sm-2 col-form-label">Tujuan</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp4" value="<?= $pm->tujuan ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-4">
-					<label for="inp5" class="col-sm-2 col-form-label">Alamat</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp5" value="<?= $pm->alamat ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-4">
-					<label for="inp6" class="col-sm-2 col-form-label">Perihal</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp6" value="<?= $pm->perihal ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-4">
-					<label for="inp8" class="col-sm-2 col-form-label">Catatan</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp8" value="<?= $pm->catatan ?>" readonly>
-					</div>
-				</div>
-				<div class="row row-cols-2 row-cols-lg-2 mt-5" style="text-align: center;">
-					<div class="col-3">
-						<p><b>Sleman, Yogyakarta</b></p><br>
-						<h6><?= $user['username']; ?></h6>
-					</div>
-					<div class="col-2" style="vertical-align: text-bottom;">
-						<p><b><?= date('d-M-y'); ?></b></p>
-					</div>
-				</div>				
 			</div>
 		</div>
+	</div>
 	</div>
 
 

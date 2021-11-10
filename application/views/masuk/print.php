@@ -21,21 +21,15 @@
 			margin-right: auto;
 			font-size: 10pt;
 		}
-		.mi {
-			background: white;
-			border-radius: 30px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-		}
 	</style>
 </head>
 
 <body>
-	<div class="card">
+	<div class="card" style="border: 0;">
 		<h5 class="card-header">
 			<img src="<?= base_url('assets/logo.png') ?>" alt="" width="70" height="70" class="d-inline-block align-text-top">
 		</h5>
-		<div class="card-body">
+		<div class="card-body" >
 			<div class="row">
 				<div class="col-md-12">
 					<p class="float-end" style="font-size: small;">Phone : (0274)869454, Call Center 0823 1403 4559 <br> E_mail kancab, yogyakarta@asabri.co.id </p>
@@ -46,71 +40,62 @@
 							<h4 class="card-title">Special title treatment</h4>
 						</b></center>
 				</div>
-				<div class="row mb-3">
-					<label for="inp1" class="col-sm-2 col-form-label">Nomor Agenda</label>
-					<div class="col-sm-5">
-						<input type="email" class="form-control" id="inp1" value="<?= $pm->no_agenda ?>" readonly>
-					</div>
-					<div class="col-sm-1">
-						<label for="inp2" class="col-form-label">Phone</label>
-					</div>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inp2" value="<?= $pm-> no_tlp?>" readonly>
-					</div>
+			</div>
+			<table class="table table-sm table-borderless" style="padding:0;">
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Kode Surat&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_agenda ?></label></td>
+					<td><label for="inp2" class="col-form-label"><b>Phone&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_tlp ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>No Surat&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_surat ?> </label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Nama Peserta&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->nama_peserta ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Nama Pemohon&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->nama_pemohon ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>NRP&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->nrp ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>KTPA&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_ktpa ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Jenis Klaim&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->jenis_klaim ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>catatan&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->catatan ?></label></td>
+				</tr>
+			</table>
+
+
+			<div class="row row-cols-2 row-cols-md-2 mt-5" style="text-align: center;">
+				<div class="col-3">
+					<p><b>Sleman, Yogyakarta</b></p><br>
+					<h6><?= $user['username']; ?></h6>
 				</div>
-				
-				<div class="row mb-3">
-					<label for="inp3" class="col-sm-2 col-form-label">Nama Peserta</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp3" value="<?= $pm->nama_peserta ?>" readonly>
-					</div>
+				<div class="col-2" style="vertical-align: text-bottom;">
+					<p><b><?= date('d-M-y'); ?></b></p>
 				</div>
-				<div class="row mb-3">
-					<label for="inp4" class="col-sm-2 col-form-label">Nama Pemohon</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp4" value="<?= $pm->nama_pemohon ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-4">
-					<label for="inp5" class="col-sm-2 col-form-label">NRP</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp5" value="<?= $pm->nrp ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-4">
-					<label for="inp6" class="col-sm-2 col-form-label">No KTPA</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp6" value="<?= $pm->no_ktpa ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-4">
-					<label for="inp7" class="col-sm-2 col-form-label">Jenis Klaim</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp7" value="<?= $pm->jenis_klaim ?>" readonly>
-					</div>
-				</div>
-				<div class="row mb-3">
-					<label for="inp8" class="col-sm-2 col-form-label">Catatan</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inp8" value="<?= $pm->catatan ?>" readonly>
-					</div>
-				</div>
-				<div class="row row-cols-2 row-cols-lg-2 mt-5" style="text-align: center;">
-					<div class="col-3">
-						<p><b>Sleman, Yogyakarta</b></p><br>
-						<h6><?= $user['username']; ?></h6>
-					</div>
-					<div class="col-2" style="vertical-align: text-bottom;">
-						<p><b><?= date('d-M-y'); ?></b></p>
-					</div>
-				</div>	
 			</div>
 		</div>
 	</div>
-	
+
 
 	<script>
-		window.onload = function() { window.print(); }
+		window.onload = function() {
+			window.print();
+		}
 	</script>
 
 </body>
