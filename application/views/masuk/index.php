@@ -1,6 +1,6 @@
 <section class="mi my-4 mx-5">
 	<div class="container">
-		<a href="" class="btn btn-primary float-end mt-4" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa fa-plus"></i></a>
+		<a href="" class="btn btn-primary float-end mt-4" id="tm" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa fa-plus"></i></a>
 		<h1>Surat Masuk</h1>		
 		<h6>Informasi mengenai pencatatan data surat masuk</h6>		
 		<hr>

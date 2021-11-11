@@ -138,6 +138,7 @@ class Home extends CI_Controller {
 			$data = array(
 				'no_agenda' => $this->input->post('no'), 
 				'no_surat' => $this->input->post('nos'), 
+				'perihal' => $this->input->post('perihal'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
 				'tgl_entry' => date('Y-m-d'), 
 				'pengirim' => $this->input->post('pengirim'), 
@@ -156,6 +157,7 @@ class Home extends CI_Controller {
 			$data = array(
 				'no_agenda' => $this->input->post('no'), 
 				'no_surat' => $this->input->post('nos'), 
+				'perihal' => $this->input->post('perihal'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
 				'tgl_entry' => date('Y-m-d'), 
 				'pengirim' => $this->input->post('pengirim'), 
@@ -173,6 +175,7 @@ class Home extends CI_Controller {
 			$data = array(
 				'no_agenda' => $this->input->post('no'), 
 				'no_surat' => $this->input->post('nos'), 
+				'perihal' => $this->input->post('perihal'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
 				'tgl_entry' => date('Y-m-d'), 
 				'pengirim' => $this->input->post('pengirim'), 
@@ -192,6 +195,7 @@ class Home extends CI_Controller {
 			$data = array(
 				'no_agenda' => $this->input->post('no'), 
 				'no_surat' => $this->input->post('nos'), 
+				'perihal' => $this->input->post('perihal'), 
 				'tgl_surat' => $this->input->post('tgl_surat'), 
 				'tgl_entry' => date('Y-m-d'), 
 				'pengirim' => $this->input->post('pengirim'), 

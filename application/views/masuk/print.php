@@ -21,6 +21,10 @@
 			margin-right: auto;
 			font-size: 10pt;
 		}
+		table{
+			margin-left:auto; 
+			margin-right:auto;
+		}
 	</style>
 </head>
 
@@ -41,9 +45,10 @@
 						</b></center>
 				</div>
 			</div>
+			<?php if($pm->jenis_klaim != "Surat Masuk Ekternal"): ?>
 			<table class="table table-sm table-borderless" style="padding:0;">
 				<tr>
-					<td><label for="inp1" class="col-form-label"><b>Kode Surat&nbsp;:</b></label></td>
+					<td style="width: 30%;"><label for="inp1" class="col-form-label"><b>No Agenda&nbsp;:</b></label></td>
 					<td><label class="col-form-label"> <?= $pm->no_agenda ?></label></td>
 					<td><label for="inp2" class="col-form-label"><b>Phone&nbsp;:</b></label></td>
 					<td><label class="col-form-label"> <?= $pm->no_tlp ?></label></td>
@@ -77,7 +82,34 @@
 					<td><label class="col-form-label"> <?= $pm->catatan ?></label></td>
 				</tr>
 			</table>
-
+			<?php else: ?>
+			<table class="table table-sm table-borderless" style="padding:0;">
+				<tr>
+					<td style="width: 30%;"><label for="inp1" class="col-form-label"><b>No Agenda&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_agenda ?> </label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>No Surat&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->no_surat ?> </label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Nama Pengirim&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->pengirim ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Perihal&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->perihal ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Alamat&nbsp;:</b></label></td>
+					<td><label class="col-form-label"> <?= $pm->alamat ?></label></td>
+				</tr>
+				<tr>
+					<td><label for="inp1" class="col-form-label"><b>Nama Petugas&nbsp;:</b></label></td>
+					<td><label class="col-form-label"><?= $user['username']; ?></label></td>
+				</tr>
+			</table>
+			<?php endif; ?>
 
 			<div class="row row-cols-2 row-cols-md-2 mt-5" style="text-align: center;">
 				<div class="col-3">

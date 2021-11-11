@@ -14,7 +14,7 @@
 
             <script>
             	$(document).ready(() => {
-            		$('#myTable').DataTable();
+            		$('#myTable').DataTable();				
             		<?php if (isset($_SESSION['toast'])) { ?>
             			toastr.options.closeButton = true;
             			var toastvalue = "<?php echo $_SESSION['toast'] ?>";
@@ -28,6 +28,22 @@
             				toastr.warning(message, status);
             			}
             		<?php } ?>
+            	});
+
+				$('#tm').on('click', function() {            		
+            		if (this.value !=  "Surat Masuk Ekternal" || this.value == null) {
+						$('.perihalM').hide().find(':input').attr('required', false);
+					} else{
+						$('.perihalM').show().find(':input').attr('required', true);
+					}
+            	});
+
+            	$('#jnsKlaim').on('change', function() {            		
+            		if (this.value !=  "Surat Masuk Ekternal" || this.value == null) {
+						$('.perihalM').hide().find(':input').attr('required', false);
+					} else{
+						$('.perihalM').show().find(':input').attr('required', true);
+					}
             	});
             </script>
 
