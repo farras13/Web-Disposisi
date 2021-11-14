@@ -45,7 +45,7 @@
 
 				<div class="my-4">
 					<center><b>
-							<h4 class="card-title">Special title treatment</h4>
+							<h4 class="card-title"><?php $pm->jenis_klaim ?></h4>
 						</b></center>
 				</div>
 			</div>
