@@ -21,7 +21,7 @@
 								<label for="floatingInputGrid">No Agenda</label>
 							</div>
 						</div>
-						<div class="col-md-12">
+						<div class="col-md-12 perihalM">
 							<div class="form-floating">
 								<input type="text" class="form-control" name="nos" id="floatingInputGrid">
 								<label for="floatingInputGrid">No Surat</label>
@@ -144,7 +144,7 @@
 								</div>
 							</div>
 							<div class="col-md-12">
-								<div class="form-floating">
+								<div class="form-floating perihalM">
 									<input type="text" class="form-control" name="nos" id="floatingInputGrid" value="<?= $ms->no_surat ?>">
 									<label for="floatingInputGrid">No Surat</label>
 								</div>
@@ -267,7 +267,7 @@
 								<label for="floatingInputGrid">No Agenda</label>
 							</div>
 						</div>
-						<div class="col-md-12">
+						<div class="col-md-12 perihalM">
 							<div class="form-floating">
 								<input type="text" class="form-control" name="nos" id="floatingInputGrid" value="<?= $ms->no_surat ?>" readonly>
 								<label for="floatingInputGrid">No Surat</label>

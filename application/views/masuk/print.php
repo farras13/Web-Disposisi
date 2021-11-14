@@ -100,14 +100,6 @@
 					<td><label for="inp1" class="col-form-label"><b>Perihal&nbsp;:</b></label></td>
 					<td><label class="col-form-label"> <?= $pm->perihal ?></label></td>
 				</tr>
-				<tr>
-					<td><label for="inp1" class="col-form-label"><b>Alamat&nbsp;:</b></label></td>
-					<td><label class="col-form-label"> <?= $pm->alamat ?></label></td>
-				</tr>
-				<tr>
-					<td><label for="inp1" class="col-form-label"><b>Nama Petugas&nbsp;:</b></label></td>
-					<td><label class="col-form-label"><?= $user['username']; ?></label></td>
-				</tr>
 			</table>
 			<?php endif; ?>
 

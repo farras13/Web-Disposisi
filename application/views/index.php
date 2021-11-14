@@ -5,25 +5,15 @@
 		<hr>
 		<div class="card-group">
 			<div class="card">
+				<img src="<?= base_url('assets/head.jpeg') ?>" alt="" class="card-img-top">
 				<div class="card-body">
-					<h3 class="card-title">Surat Masuk</h3>
-					<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veniam eaque quo? Eos aut veniam deleniti, vel placeat quibusdam sit fugiat eveniet, iste quo architecto est quis ab omnis delectus. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-				</div>
-				<div class="card-footer">
-					<a href="<?= base_url('home/masuk') ?>" class="btn btn-primary float-end"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h3 class="card-title">Surat Keluar</h3>
-					<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex beatae illum vel fugit, voluptates minus assumenda, praesentium nostrum nihil sunt iure placeat cumque voluptate iste architecto, sint quisquam accusantium unde. This card has supporting text below as a natural lead-in to additional content.</p>
-				</div>
-				<div class="card-footer">
-					<a href="<?= base_url('home/masuk') ?>" class="btn btn-primary float-end"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+					<h3 class="card-title">About us</h3>
+					<p class="card-text">Berdasarkan Undang-undang Nomor 2 Tahun 1992 tentang Usaha Perasuransian, menurut jenis usahanya PT ASABRI (Persero) merupakan asuransi jiwa, sedangkan menurut sifat penyelenggaraan usahanya PT ASABRI (Persero) bersifat sosial, sehingga dapat dikatakan bahwa PT ASABRI (Persero) adalah perusahaan asuransi jiwa yang yang bersifat sosial yang diselenggarakan secara wajib berdasarkan undang-undang dan memberikan proteksi (perlindungan) finansial untuk kepentingan Prajurit TNI, Anggota Polri dan PNS Kemhan/Polri. Penyelenggaraan kegiatan asuransi PT ASABRI (Persero) menekankan pada prinsip dasar asuransi sosial yaitu kegotongroyongan, dimana “yang muda membantu yang tua, yang berpenghasilan tinggi membantu yang berpenghasilan rendah dan yang berisiko rendah membantu yang berisiko tinggi”.</p>
 				</div>
 			</div>
 		</div>
 		<hr>
+		<center><h3>Perhitungan Surat</h3></center>
 		<div class="card-group">
 			<?php for ($i=0; $i < 4; $i++) {  ?>					
 				<div class="card">
